@@ -3,7 +3,9 @@ function setup() {
 }
 
 function draw() {
-
+  //body
+  line(200,200, 200, 400)
+  
   // head of the stickman with colour
   fill(255,255,255)
   ellipse(200, 200, 100, 100)
@@ -13,7 +15,5 @@ function draw() {
   rect(150, 120, 100, 30)
   rect(175,70,50,50)
 
-  //body
 
-  line(200,200, 200, 400)
 }
