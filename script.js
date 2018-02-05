@@ -1,12 +1,11 @@
 function setup() {
-  createCanvas(400,500,)
+  createCanvas(windowWidth, windowHeight, )
 }
+
 function draw() {
+
+  // head of the stickman with colour
   fill('red')
-  ellipse(300,100,100,100)
-
-
-  line(300, 100, 100, 100);
-  rotationX
+  ellipse(200, 200, 100, 100)
 
 }
