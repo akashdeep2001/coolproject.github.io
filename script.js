@@ -8,4 +8,7 @@ function draw() {
   fill('red')
   ellipse(200, 200, 100, 100)
 
+  // hat
+
+  rect(150, 150, 100, 100)
 }
