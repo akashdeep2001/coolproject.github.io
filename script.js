@@ -5,8 +5,8 @@ function setup() {
 function draw() {
   background(255);
 
-  let x = 400;
-  let y = 400;
+  let x = mouseX;
+  let y = mouseY;
   //body
 
   line(x,y, x, y+200);
