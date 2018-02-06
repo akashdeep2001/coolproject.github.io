@@ -9,17 +9,27 @@ function setup() {
 
 function draw() {
   background(255);
+  if(keyIsPressed) {
+    moveStickman()
+  }
 
   drawStickman(mouseX, mouseY);
   drawStickman(x, y)
 }
 
-function keyPressed() {
+function moveStickman() {
   if (key === 'w' || key == 'W') {
     y = y - 10;
   }
-
-
+  if (key === 's' || key == 'S') {
+    y = y + 10;
+  }
+  if (key === 'a' || key == 'A') {
+    x = x - 10;
+  }
+  if (key === 'd' || key == 'D') {
+    x = x + 10;
+  }
 }
 
 function drawStickman(x, y) {
