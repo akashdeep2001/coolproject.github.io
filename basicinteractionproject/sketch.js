@@ -20,6 +20,5 @@ function keyPressed(){
 function mouseClicked() {
   noStroke()
   fill(random(255),random(255),random(255),[random(255)])
-  rect(random(0, [width]), random(0, height), random(50,200), random(50,100));
-
+  rect(mouseX, mouseY, random(50,200), random(50,100));
 }
