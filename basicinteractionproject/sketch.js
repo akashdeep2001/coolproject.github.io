@@ -10,6 +10,11 @@ function draw() {
 
 }
 
+function deviceShaken(){
+  textSize(32);
+  text("Shaken, not stirred.",width/2,height/2);
+}
+
 function keyPressed(){
   noStroke()
   fill(random(255),random(255),random(255),[random(255)])
