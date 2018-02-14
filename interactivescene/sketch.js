@@ -1,37 +1,94 @@
-// p5js template project - replace with project title
-// Dan Schellenberg - replace with your name
-// Feb 2, 2018 - replace with the date
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Interactice Scence Assignement
+//Akashdeep Singh Khalsa
+//Febuary 14, 2018
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//always draw white shape unless the colour is changed by assiugned keys
 let fillShape = "white";
 
+//creates windown to draw stuff on
 function setup() {
   createCanvas(windowWidth, windowHeight);
 }
 
+// this function excecute whatever is written inside drawSquareAndCircle
 function draw() {
-  drawSquare();
+  drawSquareAndCircle();
+  noStroke();
 }
 
+// change the shape colour depending on which assigned key you press
+// function keyTyped() {
+//   if (key === "w") {
+//     fillShape = "white";
+//   }
+//   else if (key === "b") {
+//     fillShape = "blue";
+//   }
+//   else if (key === "g") {
+//     fillShape = "green";
+//   }
+//   else if (key === "y") {
+//     fillShape = "yellow";
+//   }
+//   else if (key === "p") {
+//     fillShape = "pink";
+//   }
+// }
 
-function keyTyped() {
-  if (key === "w") {
+function drawSquareAndCircle() {
+  // if key (s) is pressed then rotate the shape and draw rectangele and fill the shape with the colour that was set before
+  if (key === "s") {
+    square();
+  }
+  // if s is not pressed but c is pressed then do exact same things like traslate, roate, change colour except it will draw a circle
+  else if (key === "c") {
+    circle();
+  }
 
-    fillShape = "white";
-  }
-  else if (key === "g") {
-    fillShape = "black";
-  }
-  else if (key === "b") {
-    fillShape = "blue";
-  }
-  else if (key === "g") {
-    fillShape = "green";
+  else if (key === "r"){
+    tsc();
   }
 }
 
-function drawSquare() {
-  if (key === "d") {
-    fill(fillShape);
-    rectMode(CENTER);
-    rect(width / 2, height / 2, 200, 200);
-  }
+function tsc(){
+  triangleR();
+  square();
+  circle();
+}
+
+function square(){
+  // teleporting the entire grid to centre
+  translate(width / 2, height / 2);
+  //rotate the shape
+  rotate(PI / random(0.1, 3));
+  // change the colour of the shape with pressing the assigned keys
+  fill(random(255), random(255), random(255));
+  //draw the shape
+  rect(random(windowWidth), random(windowHeight), random(100, 200), random(100, 200));
+
+}
+
+function circle(){
+  translate(width / 2, height / 2);
+  rotate(PI / random(0.1, 3));
+  fill(random(255), random(255), random(255));
+  ellipse(random(windowWidth), random(windowHeight), random(100, 200), random(100, 200));
+}
+
+function triangleR(){
+  translate(random(windowWidth), random(windowHeight));
+  rotate(PI / random(0.1, 3));
+  
+  beginShape();
+  fill(random(255), random(255), random(255));
+
+  vertex(random(40,80), random(50,100));
+  vertex(random(200,400), random(70,140));
+  vertex(random(65,130), random(155,310));
+
+
+  endShape(CLOSE);
+
 }
