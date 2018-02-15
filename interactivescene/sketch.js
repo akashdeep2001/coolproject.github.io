@@ -16,6 +16,7 @@ function setup() {
 function draw() {
   drawSquareAndCircle();
   noStroke();
+
 }
 
 // change the shape colour depending on which assigned key you press
@@ -80,7 +81,7 @@ function circle(){
 function triangleR(){
   translate(random(windowWidth), random(windowHeight));
   rotate(PI / random(0.1, 3));
-  
+
   beginShape();
   fill(random(255), random(255), random(255));
 
@@ -91,4 +92,8 @@ function triangleR(){
 
   endShape(CLOSE);
 
+}
+
+function mousePressed() {
+  clear();
 }
