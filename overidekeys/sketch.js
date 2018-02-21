@@ -1,7 +1,8 @@
 let lightSwitch;
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  createCanvas(1350, 495);
+  background("white");
   lightSwitch = true;
 }
 

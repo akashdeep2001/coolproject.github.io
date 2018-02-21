@@ -1,7 +1,8 @@
 let a = 80;
 
 function setup() {
-  createCanvas(700, 400);
+  createCanvas(1350, 495);
+  background("white");
   background(0);
   stroke(random(255,255,255));
   noLoop();

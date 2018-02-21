@@ -11,7 +11,8 @@ let value = 100;
 
 //creates windown to draw stuff on
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  createCanvas(1350, 495);
+  background("white");
 }
 
 // this function excecute whatever is written inside drawSquareAndCircle

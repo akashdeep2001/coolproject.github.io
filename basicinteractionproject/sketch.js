@@ -3,7 +3,8 @@
 // Akashdeep Singh Khalsa
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  createCanvas(1350, 495);
+  background("white");
 }
 
 function draw() {

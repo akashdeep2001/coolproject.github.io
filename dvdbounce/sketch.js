@@ -7,7 +7,8 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  createCanvas(1350, 495);
+  background("white");
   x = width / 2;
   y = height / 2;
   radius = 50;

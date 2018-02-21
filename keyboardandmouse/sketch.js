@@ -4,7 +4,8 @@
 
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  createCanvas(1350, 495);
+  background("white");
   document.addEventListener("contextmenu", event => event.preventDefault())
 }
 

@@ -8,7 +8,8 @@
 let mode;
 
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  createCanvas(1350, 495);
+  background("white");
   noStroke();
   mode = 2;
 }
@@ -47,4 +48,3 @@ function keyTyped() {
 function mousePressed() {
   background(255);
 }
- 
