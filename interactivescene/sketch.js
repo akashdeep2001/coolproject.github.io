@@ -2,12 +2,15 @@
 // Interactice Scence Assignement
 //Akashdeep Singh Khalsa
 //Febuary 14, 2018
+//Extra for experts: custom randomly generated shape(traingle) with 3 vertex point
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-//always draw white shape unless the colour is changed by assiugned keys
-let fillShape = "white";
 let value = 100;
+let colorA;
+let colorB;
+let colorC;
 
+//random colour for the background
 
 //creates windown to draw stuff on
 function setup() {
@@ -31,35 +34,36 @@ function drawSquareAndCircle() {
   else if (key === "c") {
     circle();
   }
+  //if r is pressed then it will draw circle, square and randomly generated 3 vertex point shape(triangle).
   else if (key === "r") {
     tsc();
   }
 }
 
+// this function bring shape function's together eich is then assigned with "r" key to draw shapes.
 function tsc() {
   triangleR();
   square();
   circle();
 }
 
+// draw square
 function square() {
-  // teleporting the entire grid to centre
-  translate(width / 2, height / 2);
+  // teleporting the entire grid to random spot in canvas
+  translate(random(windowWidth), random(windowHeight));
   //rotate the shape
   rotate(PI / random(0.1, 3));
   // change the colour of the shape with pressing the assigned keys
   fill(random(255), random(255), random(255));
-
   //draw the shape
   rect(random(windowWidth), random(windowHeight), random(100, 200), random(100, 200));
-
 }
 
+//draw circle
 function circle() {
-  translate(width / 2, height / 2);
+  translate(random(windowWidth), random(windowHeight));
   rotate(PI / random(0.1, 3));
   fill(random(255), random(255), random(255));
-
   ellipse(random(windowWidth), random(windowHeight), random(100, 200), random(100, 200));
 }
 
@@ -67,7 +71,6 @@ function circle() {
 function triangleR() {
   translate(random(windowWidth), random(windowHeight));
   rotate(PI / random(0.1, 3));
-
   beginShape();
   fill(random(255), random(255), random(255));
 
@@ -76,21 +79,22 @@ function triangleR() {
   vertex(random(65, 130), random(155, 310));
 
   endShape(CLOSE);
-
 }
 
 //if you press right click then it will change background color randomly
 function mouseClicked(RIGHT) {
-  colorA = random(255);
-  colorB = random(255);
-  colorC = random(255);
-  background(colorA,colorB,colorC);
+  colorA = random(127.5);
+  colorB = random(127.5);
+  colorC = random(127.5);
+
+  background(colorA, colorB, colorC);
 }
 
 // if you mouseWheel then the color on the screen will increase by 10 rgb value until it reach 255. After it has reacheached 255 it will reset the colour the the same rgb value you started with.
-function mouseWheel(){
-  background(colorA+value,colorB+value,colorC+value);
-  value = value + 10;
+function mouseWheel() {
+
+  background(colorA + value, colorB + value, colorC + value);
+  value = value + 3;
   if (value > 255) {
     value = 0;
   }
