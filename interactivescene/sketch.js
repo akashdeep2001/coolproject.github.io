@@ -10,8 +10,6 @@ let colorA;
 let colorB;
 let colorC;
 
-//random colour for the background
-
 //creates windown to draw stuff on
 function setup() {
   createCanvas(1350, 495);
@@ -83,18 +81,18 @@ function triangleR() {
 
 //if you press right click then it will change background color randomly
 function mouseClicked(RIGHT) {
-  colorA = random(127.5);
-  colorB = random(127.5);
-  colorC = random(127.5);
+  colorA = random(100);
+  colorB = random(100);
+  colorC = random(100);
 
   background(colorA, colorB, colorC);
 }
 
-// if you mouseWheel then the color on the screen will increase by 10 rgb value until it reach 255. After it has reacheached 255 it will reset the colour the the same rgb value you started with.
+// if you mouseWheel then the color on the screen will increase by 1 rgb value until it reach 255. After it has reacheached 255 it will reset the colour the the same rgb value you started with.
 function mouseWheel() {
 
   background(colorA + value, colorB + value, colorC + value);
-  value = value + 3;
+  value = value + 1;
   if (value > 255) {
     value = 0;
   }
