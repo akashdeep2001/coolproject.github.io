@@ -1,11 +1,12 @@
 let state;
-let background;
-let buttonSound;
-let backImage;
-let carImage;
+let enemy;
+let yEnemy;
 let levelOne;
 let xCar, yCar;
+let backImage,carImage;
+let background, buttonSound;
 let movingUp, movingDown, movingLeft, movingRight;
+
 
 // load the image before the setup
 function preload() {
@@ -14,8 +15,7 @@ function preload() {
   backImage = loadImage("images/game-background.jpg");
   carImage = loadImage("images/car.png");
   levelOne = loadImage("images/levelOne.png");
-
-
+  enemy = loadImage("images/enemy.png");
 }
 
 // only do this once
@@ -24,6 +24,7 @@ function setup() {
   state = 1;
   xCar = width/2;
   yCar = height/1.3;
+  yEnemy = height/2.5;
   movingUp = false;
   movingDown = false;
   movingLeft = false;
@@ -66,6 +67,7 @@ function selectStates() {
   if (state === 4) {
     image(levelOne,0, 0, [windowWidth], [windowHeight]);
     back();
+    enemyCollison();
     moveCar();
     finish();
   }
@@ -156,6 +158,7 @@ function back(){
       state = 1;
       xCar = windowWidth/2;
       yCar = windowHeight/1.3;
+      yEnemy = windowHeight/2.5;
       buttonSound.play();
     }
   }
@@ -249,6 +252,15 @@ function volumeBackgroundOn(){
 
 function moveCar(){
   image(carImage,xCar,yCar,[150],[150]);
+}
+function enemyCollison(){
+  image(enemy,xCar,yEnemy,[50],[50]);
+  if(yEnemy < windowHeight/1 ){
+    yEnemy = yEnemy + 2;
+  }
+  if (yEnemy === yCar){
+    state =5;
+  }
 }
 
 // if key is pressed then moving is true
