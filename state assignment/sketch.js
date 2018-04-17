@@ -1,3 +1,11 @@
+// State Assignemnt
+// Akashdeep Khalsa
+// April 11 2018
+// Extra for expert - Sound
+// attemt - Collison of Car
+// control- WAD to move the car
+// goal -  reach orange button to finish the car game
+
 let state;
 let enemy;
 let yEnemy;
@@ -75,6 +83,9 @@ function selectStates() {
   if (state === 5) {
     image(levelOne,0, 0, [windowWidth], [windowHeight]);
     back();
+    textSize(40);
+    fill("pink");
+    text("Game Finish",windowWidth/2.4,windowHeight/2);
   }
 }
 
@@ -97,7 +108,12 @@ function start() {
   }
   fill(203, 79, 238);
   rect(leftSide, topSide, buttonWidth, buttonHeight);
+  textSize(28);
+  fill(0,0,0);
+  text("Start",windowWidth/2.1,windowHeight/1.95);
 }
+
+
 
 // ifthis button is pressed then chage the state to 3 and go to setting page where you can change the volume
 function setting() {
@@ -119,6 +135,9 @@ function setting() {
 
   fill(95, 244, 239);
   rect(leftSide, topSide, buttonWidth, buttonHeight);
+  textSize(28);
+  fill(0,0,0);
+  text("Setting",windowWidth/2.1,windowHeight/1.55);
 }
 
 // if this button is pressed then select that charter  and go to next state (4)
@@ -140,6 +159,9 @@ function characterOne(){
   }
   fill(226, 29, 29);
   rect(leftSide, topSide, buttonWidth, buttonHeight);
+  textSize(24);
+  fill(0,0,0);
+  text("Red Car",windowWidth/2.1,windowHeight/1.2);
 }
 
 // when the button is pressed go to start screen AKA state 1
@@ -164,10 +186,13 @@ function back(){
   }
   fill(198, 56, 100);
   rect(leftSide, topSide, buttonWidth, buttonHeight);
+  textSize(24);
+  fill(0,0,0);
+  text("Back",windowWidth/9,windowHeight/7);
 }
 
 //change the volume of asset when the button is pressed
-function volumeAssetsOff(){
+function volumeAssetsOn(){
   let buttonWidth = 100;
   let buttonHeight = 50;
   let leftSide = width / 2 - buttonWidth / 2;
@@ -184,10 +209,13 @@ function volumeAssetsOff(){
   }
   fill(98, 236, 52);
   rect(leftSide, topSide, buttonWidth, buttonHeight);
+  textSize(20);
+  fill(0,0,0);
+  text("Assets Off",windowWidth/2.13,windowHeight/2);
 
 }
 
-function volumeAssetsOn(){
+function volumeAssetsOff(){
   let buttonWidth = 100;
   let buttonHeight = 50;
   let leftSide = width / 2 - buttonWidth / 2;
@@ -205,6 +233,9 @@ function volumeAssetsOn(){
   }
   fill(136, 61, 10);
   rect(leftSide, topSide, buttonWidth, buttonHeight);
+  textSize(20);
+  fill(0,0,0);
+  text("Assets ON",windowWidth/2.13,windowHeight/1.7);
 
 }
 
@@ -227,6 +258,9 @@ function volumeBackgroundOff(){
   }
   fill(110, 60, 241);
   rect(leftSide, topSide, buttonWidth, buttonHeight);
+  textSize(20);
+  fill(0,0,0);
+  text("Volume Off",windowWidth/2.13,windowHeight/3);
 }
 
 function volumeBackgroundOn(){
@@ -247,6 +281,9 @@ function volumeBackgroundOn(){
   }
   fill(209, 27, 205);
   rect(leftSide, topSide, buttonWidth, buttonHeight);
+  textSize(20);
+  fill(0,0,0);
+  text("Volume On",windowWidth/2.13,windowHeight/4);
 }
 
 
@@ -326,4 +363,5 @@ function finish(){
   }
   fill(238, 125, 50);
   rect(leftSide, topSide, buttonWidth, buttonHeight);
+
 }
